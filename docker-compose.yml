@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  # PHP (with Caddy)
+  app:
+    image: kpg-eventos-php
+    build: .
+    container_name: kpg-eventos
+    volumes:
+      - ./:/var/www/app
+    ports:
+      - "8080:8080"
+      - "8090:80"
+    network_mode: host
