@@ -54,7 +54,7 @@ class GuestController extends Controller
 
     public function myEvents(){
 
-        $events = DB::table('events')
+        $events = Event::with('ownerUser')->with('guests')
             ->join('guests', 'events.id', '=', 'guests.event_id')
             ->where('guests.user_id', Auth::id())
             ->where('guests.status', 'CONFIRMED')
