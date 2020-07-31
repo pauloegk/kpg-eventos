@@ -13,14 +13,35 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware(['auth'])->group(function () {
 
-Route::resources([
-    'events' => 'EventController'
-]);
+    Route::get('/', function () {
+        return redirect('events');
+    });
+
+    Route::resource('events', 'EventController');
+
+    Route::get('/events/{id}/guests', 'EventController@getGuests');
+
+    Route::post('/events/{id}/cancel', 'EventController@cancelEvent')->name('cancel-event');
+
+    Route::post('/events/{id}/send-invite', 'EventController@sendInvite')->name('send-invite');
+
+    Route::get('/events/{id}/confirm-invite', 'EventController@confirmInvite')->name('confirm-invite');
+
+    Route::get('/my-events', 'GuestController@myEvents')->name('my-events');
+
+    Route::post('/guests/event/{id}/request-participation', 'GuestController@requestParticipation');
+
+    Route::post('/guests/event/{id}/cancel-participation', 'GuestController@cancelParticipation');
+
+    Route::post('/notifications', 'MessageGuestsController@send');
+
+
+});
+
+
+
+

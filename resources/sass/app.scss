@@ -1,8 +1,76 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+
+.div-new-event {
+    margin-bottom: 15px;
+    .title{
+        display: flex;
+        align-items: center;
+        font-size: 17px;
+    }
+}
+
+.no-events-results{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.card-header{
+    a{
+        color: unset;
+    }
+    span:first-child{
+        cursor: pointer;
+    }
+    .title{
+        font-size: 16px;
+    }
+    svg{
+        font-size: 34px;
+    }
+}
+
+.button-details{
+    font-size: 16px;
+    float: right;
+}
+
+
+.card-body{
+    .description{
+        margin-top: 10px;
+    }
+    .actions{
+        margin-top: 20px;
+        font-size: 16px;
+        display: flex;
+        .margin-right{
+            margin-right: 20px;
+        }
+    }
+    .button-cancel{
+        margin-top: 15px;
+    }
+}
+
+.margin-bottom{
+    margin-bottom: 10px;
+}
+.card-title{
+    font-size: 20px;
+    .name{
+        font-weight: bold;
+    }
+    .canceled{
+        font-size: 16px;
+        color: red;
+    }
+}

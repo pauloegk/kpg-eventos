@@ -10928,3 +10928,76 @@ a.text-dark:focus {
   }
 }
 
+.div-new-event {
+  margin-bottom: 15px;
+}
+
+.div-new-event .title {
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+}
+
+.no-events-results {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.card-header a {
+  color: unset;
+}
+
+.card-header span:first-child {
+  cursor: pointer;
+}
+
+.card-header .title {
+  font-size: 16px;
+}
+
+.card-header svg {
+  font-size: 34px;
+}
+
+.button-details {
+  font-size: 16px;
+  float: right;
+}
+
+.card-body .description {
+  margin-top: 10px;
+}
+
+.card-body .actions {
+  margin-top: 20px;
+  font-size: 16px;
+  display: flex;
+}
+
+.card-body .actions .margin-right {
+  margin-right: 20px;
+}
+
+.card-body .button-cancel {
+  margin-top: 15px;
+}
+
+.margin-bottom {
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-size: 20px;
+}
+
+.card-title .name {
+  font-weight: bold;
+}
+
+.card-title .canceled {
+  font-size: 16px;
+  color: red;
+}
+

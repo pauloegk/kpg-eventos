@@ -8,24 +8,27 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+import VueCtkDateTimePicker from 'vue-ctk-date-time-picker';
+import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css';
+import moment from 'moment';
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+Vue.component('VueCtkDateTimePicker', VueCtkDateTimePicker);
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('schedule-notifications-component', require('./components/ScheduleNotificationsComponent.vue').default);
+Vue.component('guests-component', require('./components/GuestsComponent.vue').default);
+Vue.component('event-details-component', require('./components/EventDetailsComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+
+Vue.filter('formatDate', function (value) {
+    if (value) {
+        return moment(String(value)).format('MM/DD/YYYY hh:mm')
+    }
+});
 
 const app = new Vue({
     el: '#app',
